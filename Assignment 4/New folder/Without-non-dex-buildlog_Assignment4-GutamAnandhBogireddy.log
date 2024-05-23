@@ -1,0 +1,65 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------------< net.bytebuddy:byte-buddy-dep >--------------------
+[INFO] Building Byte Buddy (with dependencies) 1.14.10-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ byte-buddy-dep ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/steve/byte-buddy/byte-buddy-dep/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ byte-buddy-dep ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- byte-buddy-maven-plugin:1.14.6:transform (default) @ byte-buddy-dep ---
+[INFO] Resolving transformer dependency: MavenCoordinate{groupId='net.bytebuddy', artifactId='byte-buddy', version='1.14.6', packaging='jar'}
+[INFO] Resolved plugin: net.bytebuddy.build.HashCodeAndEqualsPlugin$WithNonNullableFields
+[INFO] Resolved plugin: net.bytebuddy.build.CachedReturnPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.AccessControllerPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.DispatcherAnnotationPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.RepeatedAnnotationPlugin
+[INFO] Resolved entry point: REDEFINE
+[INFO] Processing class files located in in: /home/steve/byte-buddy/byte-buddy-dep/target/classes
+[INFO] Transformed 1 type(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ byte-buddy-dep ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 15 resources
+[INFO] Copying 34 resources
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ byte-buddy-dep ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 764 source files to /home/steve/byte-buddy/byte-buddy-dep/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ byte-buddy-dep ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 s - in net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.205 s
+[INFO] Finished at: 2023-10-25T18:21:47-04:00
+[INFO] ------------------------------------------------------------------------

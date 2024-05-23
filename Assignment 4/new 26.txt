@@ -1,0 +1,143 @@
+username: steve
+password: Zion123$
+
+
+commands:
+
+1. explorer.exe .
+\\wsl.localhost\Ubuntu\home\steve
+
+2. 
+Install remote code on the visual studio code
+
+3. Ran the below command in git.
+
+johns@steve MINGW64 //wsl.localhost/Ubuntu/home/steve/idoft
+$ git config --global --add safe.directory '%(prefix)///wsl.localhost/Ubuntu/home/steve/idoft'
+
+
+
+git clone https://github.com/winglam/idoft-637-fa23
+cd idoft-637-fa23
+grep ,ID,,,$ pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo jgutam@gmu.edu; done) | head -n 5
+
+
+
+Project URL,SHA Detected,Module Path,Fully-Qualified Test Name (packageName.ClassName.methodName),Category,Status,PR Link,Notes
+    https://github.com/vojtechhabarta/typescript-generator,caef58bfe55a8cd1fc5d7368c19e9ff818a7b7fa,typescript-generator-core,cz.habarta.typescript.generator.TaggedUnionsTest.testTaggedUnionsWithInterfaces,ID,,,
+    
+
+https://github.com/alibaba/wasp,b2593d8e4b31ca6da0cd2f3e18356338d9b6dace,.,com.alibaba.wasp.meta.TestRowBuilder.testBuildStartKeyAndEndKey,ID,,,
+https://github.com/alibaba/wasp,b2593d8e4b31ca6da0cd2f3e18356338d9b6dace,.,com.alibaba.wasp.master.TestRestartCluster.testClusterRestart,ID,,,
+https://github.com/espertechinc/esper,590fa9c9eb854f1420b9d337b802aca19f963cc0,regression-run,com.espertech.esper.regressionrun.suite.infra.TestSuiteInfraNWTable.testInfraNWTableInfraOnMergePerf,ID,,,
+https://github.com/apache/druid,50963edcae70150f13520b619f167512d951a71b,extensions-core/avro-extensions,org.apache.druid.data.input.AvroStreamInputFormatTest.testParseSchemaless,ID,,,
+https://github.com/apache/pinot,ecf41be2ecd007853c2db19e1c6a038cf356cb9e,pinot-core,org.apache.pinot.queries.ExplainPlanQueriesTest.testSelect,ID,,,
+
+grep ,ID,,,$ id-pr-data.csv | grep -v \\[ | shuf --random-source=<(while :; do echo jgutam@gmu.edu; done) | head -n 5
+
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest.testTypeAnnotationExceptionType,ID,,,
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.description.type.TypeDescriptionArrayProjectionTest.testTypeAnnotationExceptionType,ID,,,
+https://github.com/spotify/apollo,a03105ee1f98f8c5878f4e3c4d03c8732c6384bd,apollo-api-impl,com.spotify.apollo.route.MiddlewaresTest.asShouldSerializeResponseObjectAsJson,ID,,,
+https://github.com/4thline/cling,0ca10d5e73bdc8062eeffad57d67dd8ee260379c,core,org.fourthline.cling.test.gena.EventXMLProcessingTest.writeReadRequestRecovering,ID,,,
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.description.method.MethodDescriptionLatentTest.testExceptions,ID,,,
+
+
+Project URL,SHA Detected,Module Path,Fully-Qualified Test Name (packageName.ClassName.methodName),Category,Status,PR Link,Notes
+    https://github.com/vojtechhabarta/typescript-generator,caef58bfe55a8cd1fc5d7368c19e9ff818a7b7fa,typescript-generator-core,cz.habarta.typescript.generator.TaggedUnionsTest.testTaggedUnionsWithInterfaces,ID,,,
+    
+
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest.testTypeAnnotationExceptionType,ID,,,
+
+    # clone the test's repo
+    cd ~
+    git clone https://github.com/raphw/byte-buddy
+    cd byte-buddy-dep
+
+    # print the latest commit...
+    git rev-parse HEAD
+    # ... it's the best to work with the latest commit, but you may try an older one if needed
+    # git checkout caef58bfe55a8cd1fc5d7368c19e9ff818a7b7fa
+
+    # compile the module where the test is, and all modules it depends on...
+    mvn clean install -DskipTests -pl byte-buddy-dep -am
+    # ...note that this will download A LOT of dependencies;
+    # ...if you run into compilation problems, try another Java version, search for solution online, or move to another test;
+    # ...one common problem may be other checks failing. Typically, you should be able to search on Google and find options to disable such checks, e.g., -Drat.skip, -Dlicense.skip=true, or -Dcheckstyle.skip
+
+    # run the test to check that it passes (note the change from '.' to '#')...
+    mvn -pl byte-buddy-dep test -Dtest=net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest#testTypeAnnotationExceptionType
+    # ...the test may have been deleted meanwhile or may not pass; if so, move to another test
+
+    # if the test passes in regular runs, see if it fails with the NonDex tool that reports flaky tests...
+    mvn -pl byte-buddy-dep edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest=net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest#testTypeAnnotationExceptionType
+    # ...you may need to increase the number of runs with -DnondexRuns=10 or -DnondexRuns=100
+    # ...if you get "Failed to execute goal edu.illinois:nondex-maven-plugin:2.1.1:nondex (default-cli) on project typescript-generator-core: Unable to execute mojo: There are test failures.", that is GOOD as it means you found some failures
+    
+Task parts
+
+
+
+
+
+
+
+
+
+By adding a new mirrors section with the following mirrors to settings.xml file will fix the issue. We should place this after the servers section.
+Setting the blocked tag to false, will fix the issue. 
+
+
+ Maven comes with a default configuration to block all HTTP (insecure) repositories. The best way would be to upgrade your repositories and make them secure (HTTPS).
+
+However, we can tell Maven to allow downloading from your insecure repository by adding this mirror to your ~/.m2/settings.xml:
+
+<mirror>
+  <id>insecure-repo</id>
+  <mirrorOf>external:http:*</mirrorOf>
+  <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo/</url>
+  <blocked>false</blocked>
+</mirror>
+
+Setting blocked to false will fix your issue. Note that above snippet assumes that the repository at www.ebi.ac.uk mirrors all insecure HTTP repositories (which is what external:http:* means).
+
+
+
+
+
+
+
+
+
+In Collection classes like List, mutations affect the result of equals() and hashCode(). When the list is first put into the HashSet, it is stored in the hash bucket corresponding to its hashCode() result at that time. When the list is subsequently mutated, its hashCode() changes, but HashSet doesn’t realize it should be moved to a different bucket. So it can never be found again.
+
+
+
+With grep ,ID,,,$ pr-data.csv | grep -v
+https://github.com/apache/ignite-3,a1aa7fd4e2398c72827777ec5417d67915ff4da3,modules/schema,org.apache.ignite.internal.schema.configuration.TableValidatorImplTest.testNoIssues,ID,,,
+https://github.com/apache/ignite-3,9641a013665e7012941b2362e9cba64fac4ba0e6,modules/storage-page-memory,org.apache.ignite.internal.storage.pagememory.mv.VolatilePageMemoryMvPartitionStorageTest.committedMultiPageValuesAreReadSuccessfully,ID,,,
+https://github.com/espertechinc/esper,590fa9c9eb854f1420b9d337b802aca19f963cc0,regression-run,com.espertech.esper.regressionrun.suite.epl.TestSuiteEPLOther.testEPLOtherCreateSchema,ID,,,
+https://github.com/apache/druid,50963edcae70150f13520b619f167512d951a71b,extensions-core/parquet-extensions,org.apache.druid.data.input.parquet.FlattenSpecParquetReaderTest.testNested1Autodiscover,ID,,,
+https://github.com/apache/druid,50963edcae70150f13520b619f167512d951a71b,core,org.apache.druid.math.expr.ParserTest.testSimpleLogicalOps1,ID,,,
+
+With grep ,ID,,,$ id-pr-data.csv | grep -v
+https://github.com/spotify/apollo,a03105ee1f98f8c5878f4e3c4d03c8732c6384bd,apollo-api-impl,com.spotify.apollo.route.MiddlewaresTest.asShouldSerializeResponseObjectAsJson,ID,,,
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.description.type.TypeDescriptionForLoadedTypeTest.testTypeAnnotationExceptionType,ID,,,
+https://github.com/raphw/byte-buddy,505b9bb02920c6f5d8662ce310f9568acd1e5baf,byte-buddy-dep,net.bytebuddy.pool.TypePoolDefaultMethodDescriptionTest.testExceptions,ID,,,
+https://github.com/4thline/cling,0ca10d5e73bdc8062eeffad57d67dd8ee260379c,core,org.fourthline.cling.test.gena.EventXMLProcessingTest.writeReadRequestPull,ID,,,
+https://github.com/4thline/cling,0ca10d5e73bdc8062eeffad57d67dd8ee260379c,core,org.fourthline.cling.test.gena.EventXMLProcessingTest.writeReadRequestRecovering,ID,,,
+
+
+
+git clone https://github.com/apache/ignite-3
+git clone https://github.com/espertechinc/esper
+git clone https://github.com/apache/druid
+git clone https://github.com/spotify/apollo - Failed to get dependencies
+git clone https://github.com/raphw/byte-buddy - build success but non dex failed.
+git clone https://github.com/4thline/cling
+
+https://github.com/4thline/cling.git
+
+
+
+Log to save:
+mvn clean install -DskipTests -pl byte-buddy-dep -am --log-file ci-build.log

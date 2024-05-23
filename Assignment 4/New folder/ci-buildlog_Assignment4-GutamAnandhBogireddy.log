@@ -1,0 +1,133 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 3 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 3 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Byte Buddy (parent)                                                [pom]
+[INFO] Byte Buddy agent                                                   [jar]
+[INFO] Byte Buddy (with dependencies)                                     [jar]
+[INFO] 
+[INFO] ------------------< net.bytebuddy:byte-buddy-parent >-------------------
+[INFO] Building Byte Buddy (parent) 1.14.10-SNAPSHOT                      [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ byte-buddy-parent ---
+[INFO] 
+[INFO] --- license-maven-plugin:3.0:format (default) @ byte-buddy-parent ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- maven-install-plugin:3.0.1:install (default-install) @ byte-buddy-parent ---
+[INFO] Installing /home/steve/byte-buddy/pom.xml to /home/steve/.m2/repository/net/bytebuddy/byte-buddy-parent/1.14.10-SNAPSHOT/byte-buddy-parent-1.14.10-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------------< net.bytebuddy:byte-buddy-agent >-------------------
+[INFO] Building Byte Buddy agent 1.14.10-SNAPSHOT                         [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ byte-buddy-agent ---
+[INFO] Deleting /home/steve/byte-buddy/byte-buddy-agent/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ byte-buddy-agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ byte-buddy-agent ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/steve/byte-buddy/byte-buddy-agent/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.7:manifest (default) @ byte-buddy-agent ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[INFO] Writing manifest: /home/steve/byte-buddy/byte-buddy-agent/target/classes/META-INF/MANIFEST.MF
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ byte-buddy-agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/steve/byte-buddy/byte-buddy-agent/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ byte-buddy-agent ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /home/steve/byte-buddy/byte-buddy-agent/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ byte-buddy-agent ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- modulemaker-maven-plugin:1.9:make-module (default) @ byte-buddy-agent ---
+[INFO] Added module-info.class to /home/steve/byte-buddy/byte-buddy-agent/target/classes
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ byte-buddy-agent ---
+[INFO] Building jar: /home/steve/byte-buddy/byte-buddy-agent/target/byte-buddy-agent-1.14.10-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:3.0.1:install (default-install) @ byte-buddy-agent ---
+[INFO] Installing /home/steve/byte-buddy/byte-buddy-agent/pom.xml to /home/steve/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10-SNAPSHOT/byte-buddy-agent-1.14.10-SNAPSHOT.pom
+[INFO] Installing /home/steve/byte-buddy/byte-buddy-agent/target/byte-buddy-agent-1.14.10-SNAPSHOT.jar to /home/steve/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10-SNAPSHOT/byte-buddy-agent-1.14.10-SNAPSHOT.jar
+[INFO] 
+[INFO] --------------------< net.bytebuddy:byte-buddy-dep >--------------------
+[INFO] Building Byte Buddy (with dependencies) 1.14.10-SNAPSHOT           [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ byte-buddy-dep ---
+[INFO] Deleting /home/steve/byte-buddy/byte-buddy-dep/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ byte-buddy-dep ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/steve/byte-buddy/byte-buddy-dep/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ byte-buddy-dep ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 324 source files to /home/steve/byte-buddy/byte-buddy-dep/target/classes
+[INFO] 
+[INFO] --- byte-buddy-maven-plugin:1.14.6:transform (default) @ byte-buddy-dep ---
+[INFO] Resolving transformer dependency: MavenCoordinate{groupId='net.bytebuddy', artifactId='byte-buddy', version='1.14.6', packaging='jar'}
+[INFO] Resolved plugin: net.bytebuddy.build.HashCodeAndEqualsPlugin$WithNonNullableFields
+[INFO] Resolved plugin: net.bytebuddy.build.CachedReturnPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.AccessControllerPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.DispatcherAnnotationPlugin
+[INFO] Resolved plugin: net.bytebuddy.build.RepeatedAnnotationPlugin
+[INFO] Resolved entry point: REDEFINE
+[INFO] Processing class files located in in: /home/steve/byte-buddy/byte-buddy-dep/target/classes
+[INFO] Transformed 1068 type(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ byte-buddy-dep ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 15 resources
+[INFO] Copying 34 resources
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ byte-buddy-dep ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 764 source files to /home/steve/byte-buddy/byte-buddy-dep/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ byte-buddy-dep ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ byte-buddy-dep ---
+[INFO] Building jar: /home/steve/byte-buddy/byte-buddy-dep/target/byte-buddy-dep-1.14.10-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:3.0.1:install (default-install) @ byte-buddy-dep ---
+[INFO] Installing /home/steve/byte-buddy/byte-buddy-dep/pom.xml to /home/steve/.m2/repository/net/bytebuddy/byte-buddy-dep/1.14.10-SNAPSHOT/byte-buddy-dep-1.14.10-SNAPSHOT.pom
+[INFO] Installing /home/steve/byte-buddy/byte-buddy-dep/target/byte-buddy-dep-1.14.10-SNAPSHOT.jar to /home/steve/.m2/repository/net/bytebuddy/byte-buddy-dep/1.14.10-SNAPSHOT/byte-buddy-dep-1.14.10-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Byte Buddy (parent) 1.14.10-SNAPSHOT:
+[INFO] 
+[INFO] Byte Buddy (parent) ................................ SUCCESS [  0.412 s]
+[INFO] Byte Buddy agent ................................... SUCCESS [  2.384 s]
+[INFO] Byte Buddy (with dependencies) ..................... SUCCESS [ 11.105 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.093 s
+[INFO] Finished at: 2023-10-25T17:49:10-04:00
+[INFO] ------------------------------------------------------------------------

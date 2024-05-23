@@ -1,0 +1,10 @@
+-ln "1" -sm 2 
+-ln "" -sm 1 
+-ln "1@2@3" --statistics-mode 2 
+-ln null -sm 1 
+-ln "1x" -sm 3 
+-lk "1 2 3" -sm 4 
+-ln "1 2 3" -km 4 
+-ln "1x" -sm  4 
+--list-of-numbers "1 2 3" -sm 4 
+--list-of-numbers "1 2 3" --statistics-mode 3 
